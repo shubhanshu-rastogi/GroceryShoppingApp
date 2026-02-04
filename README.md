@@ -2,6 +2,8 @@
 
 A beautiful online fruits & vegetables shopping cart with an admin console for managing categories, products, pricing, inventory, and images.
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/shubhanshu-rastogi/GroceryShoppingApp)
+
 ## Features
 - Shopper: search, filters, sorting, cart, checkout, delivery fee logic
 - Admin: category management, product creation, price/stock updates, image URLs
