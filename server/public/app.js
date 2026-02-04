@@ -1,6 +1,8 @@
 const STORAGE_KEY = "verdant_cart_state_v1";
 const TOKEN_KEY = "verdant_auth_token";
-const API_BASE = "http://localhost:4000";
+const API_BASE = window.location.origin.includes("localhost:5173")
+  ? "http://localhost:4000"
+  : window.location.origin;
 
 const defaultState = {
   categories: [],

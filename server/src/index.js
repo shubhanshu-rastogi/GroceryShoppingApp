@@ -3,6 +3,7 @@ const cors = require("cors");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { PrismaClient } = require("@prisma/client");
+const path = require("path");
 require("dotenv").config();
 
 const prisma = new PrismaClient();
@@ -10,6 +11,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+const publicDir = path.join(__dirname, "..", "public");
+app.use(express.static(publicDir));
 
 const JWT_SECRET = process.env.JWT_SECRET || "dev-secret";
 const imagePalettes = [

@@ -39,12 +39,12 @@ npx prisma migrate dev
 npm run dev
 ```
 
-The API runs at `http://localhost:4000`.
+The API (and frontend) run at `http://localhost:4000`.
 
 ### 2) Frontend
-Serve the static frontend (recommended):
+Optional: serve the static frontend separately:
 ```bash
-cd /Users/shubhanshurastogi_1/Learning/WebApps
+cd /Users/shubhanshurastogi_1/Learning/WebApps/server/public
 python3 -m http.server 5173
 ```
 
@@ -54,6 +54,13 @@ Open `http://localhost:5173`.
 Use the credentials in `server/.env`:
 - `ADMIN_EMAIL`
 - `ADMIN_PASSWORD`
+
+## Deploy on Render
+This repo includes `render.yaml` for a single web service + Postgres.
+Steps:
+1. Create a new Render Blueprint and point it to this repo.
+2. After provisioning, update `ADMIN_EMAIL`, `ADMIN_PASSWORD`, and `JWT_SECRET` in the Render dashboard.
+The service serves the frontend from `server/public` and the API from the same domain.
 
 ## API Endpoints (summary)
 - `POST /api/auth/register`
